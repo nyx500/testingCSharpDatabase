@@ -54,9 +54,14 @@ namespace TestingSQLRelationships.Data
             //modelBuilder.Entity<ProgrammingLanguage>()
             //    .Property(n => n.Name);
 
+
+            modelBuilder.ApplyConfiguration(new GenderConfig());
+            modelBuilder.ApplyConfiguration(new CareerPhaseConfig());
+            modelBuilder.ApplyConfiguration(new ExperienceLevelConfig());
             modelBuilder.ApplyConfiguration(new NaturalLanguageConfig());
             modelBuilder.ApplyConfiguration(new ProgrammingLanguageConfig());
             modelBuilder.ApplyConfiguration(new CSInterestConfig());
+            modelBuilder.ApplyConfiguration(new HobbyConfig());
 
 
             // Set up many-to-many relationship between natural/programming languages and Users
@@ -87,6 +92,11 @@ namespace TestingSQLRelationships.Data
 
             modelBuilder.ApplyConfiguration(new CSInterestUserConfig());
 
+            modelBuilder.ApplyConfiguration(new HobbyUserConfig());
+
+            modelBuilder.ApplyConfiguration(new LikesConfig());
+
+           
             // Creates the Natural Language table in DB using the enum storing all the language names
             //foreach (int i in Enum.GetValues(typeof(EnumsForUser.NaturalLanguageName)))
             //{

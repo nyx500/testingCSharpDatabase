@@ -2,7 +2,9 @@
 {
     public class Hobby
     {
-        public int Id { get; set; }
-        public string Name { get; set; }    
+        public int HobbyId { get; set; }
+        public string Name { get; set; }
+        public ICollection<HobbyUser> HobbyUsers { get; set; }
+
     }
 }

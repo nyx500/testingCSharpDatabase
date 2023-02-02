@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestingSQLRelationships.Data;
 
@@ -11,9 +12,11 @@ using TestingSQLRelationships.Data;
 namespace TestingSQLRelationships.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230202201735_PleaseWorkPleaseWorkPleaseWork2")]
+    partial class PleaseWorkPleaseWorkPleaseWork2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -863,12 +866,10 @@ namespace TestingSQLRelationships.Migrations
             modelBuilder.Entity("TestingSQLRelationships.Models.Likes", b =>
                 {
                     b.Property<string>("SlackId1")
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("Liker User");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("SlackId2")
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("Liked User");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("SlackId1", "SlackId2");
 
@@ -881,11 +882,6 @@ namespace TestingSQLRelationships.Migrations
                         {
                             SlackId1 = "U73VQP71",
                             SlackId2 = "8UJBW6F3"
-                        },
-                        new
-                        {
-                            SlackId1 = "8UJBW6F3",
-                            SlackId2 = "U73VQP71"
                         });
                 });
 
@@ -1742,14 +1738,14 @@ namespace TestingSQLRelationships.Migrations
                             AccessFailedCount = 0,
                             Bio = "Hello, my name is John. I am interested in AI.",
                             CareerPhaseId = 2,
-                            ConcurrencyStamp = "665210ef-c081-4f7b-9e3b-95163424e705",
+                            ConcurrencyStamp = "7fb16fa5-207b-4787-bf5b-f2f65b879455",
                             EmailConfirmed = false,
                             ExperienceLevelId = 2,
                             GenderId = 1,
-                            Id = "b51e101d-b7de-4f35-8fb4-150f28bc2e82",
+                            Id = "706ea079-c50f-42a9-b0cd-efc62f9bcbe1",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "798dcd01-e441-49f6-8a91-16421e85e8d9",
+                            SecurityStamp = "dae4b998-33c4-42e9-b3d7-d4e54bc512a3",
                             TwoFactorEnabled = false
                         },
                         new
@@ -1758,14 +1754,14 @@ namespace TestingSQLRelationships.Migrations
                             AccessFailedCount = 0,
                             Bio = "Hello, my name is Amanda. I am interested in VR.",
                             CareerPhaseId = 1,
-                            ConcurrencyStamp = "7aa73ba9-6e43-451e-b3b2-d965ebd49dd0",
+                            ConcurrencyStamp = "8ce36339-b4f9-4262-8e15-b8908802a749",
                             EmailConfirmed = false,
                             ExperienceLevelId = 2,
                             GenderId = 2,
-                            Id = "47c63420-1ca9-43b1-8559-3817ca848e1b",
+                            Id = "8c088b78-1a32-403b-a0bd-b9664d436fbd",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "51b4229a-04fb-40f9-889b-36a05f418652",
+                            SecurityStamp = "0392a8ae-2e77-4253-b1d8-6d16d352573a",
                             TwoFactorEnabled = false
                         });
                 });

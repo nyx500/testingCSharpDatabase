@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestingSQLRelationships.Data;
 
@@ -11,9 +12,11 @@ using TestingSQLRelationships.Data;
 namespace TestingSQLRelationships.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230202201901_PleaseWorkPleaseWorkPleaseWork3")]
+    partial class PleaseWorkPleaseWorkPleaseWork3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -863,12 +866,10 @@ namespace TestingSQLRelationships.Migrations
             modelBuilder.Entity("TestingSQLRelationships.Models.Likes", b =>
                 {
                     b.Property<string>("SlackId1")
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("Liker User");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("SlackId2")
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("Liked User");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("SlackId1", "SlackId2");
 
@@ -1742,14 +1743,14 @@ namespace TestingSQLRelationships.Migrations
                             AccessFailedCount = 0,
                             Bio = "Hello, my name is John. I am interested in AI.",
                             CareerPhaseId = 2,
-                            ConcurrencyStamp = "665210ef-c081-4f7b-9e3b-95163424e705",
+                            ConcurrencyStamp = "efa1321a-5c72-47c0-b732-809634cc0d8c",
                             EmailConfirmed = false,
                             ExperienceLevelId = 2,
                             GenderId = 1,
-                            Id = "b51e101d-b7de-4f35-8fb4-150f28bc2e82",
+                            Id = "43f0637c-5050-4c14-aaed-fd7f07acdd73",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "798dcd01-e441-49f6-8a91-16421e85e8d9",
+                            SecurityStamp = "186201a3-35ee-470b-a36a-ff6fbd9f76e1",
                             TwoFactorEnabled = false
                         },
                         new
@@ -1758,14 +1759,14 @@ namespace TestingSQLRelationships.Migrations
                             AccessFailedCount = 0,
                             Bio = "Hello, my name is Amanda. I am interested in VR.",
                             CareerPhaseId = 1,
-                            ConcurrencyStamp = "7aa73ba9-6e43-451e-b3b2-d965ebd49dd0",
+                            ConcurrencyStamp = "7b487d57-7668-4330-90bc-9b706f2db7d4",
                             EmailConfirmed = false,
                             ExperienceLevelId = 2,
                             GenderId = 2,
-                            Id = "47c63420-1ca9-43b1-8559-3817ca848e1b",
+                            Id = "153dc8a8-a0f2-485e-80c4-c4229d03ac64",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "51b4229a-04fb-40f9-889b-36a05f418652",
+                            SecurityStamp = "452d1053-5d35-4ac9-a666-a53f95461e89",
                             TwoFactorEnabled = false
                         });
                 });

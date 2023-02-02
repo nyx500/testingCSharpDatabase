@@ -12,8 +12,8 @@ using TestingSQLRelationships.Data;
 namespace TestingSQLRelationships.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230202155829_AddCSInterestsTable")]
-    partial class AddCSInterestsTable
+    [Migration("20230202201447_PleaseWorkPleaseWorkPleaseWork")]
+    partial class PleaseWorkPleaseWorkPleaseWork
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -292,6 +292,590 @@ namespace TestingSQLRelationships.Migrations
                             SlackId = "U73VQP71",
                             CSInterestId = 3
                         });
+                });
+
+            modelBuilder.Entity("TestingSQLRelationships.Models.CareerPhase", b =>
+                {
+                    b.Property<int>("CareerPhaseId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CareerPhaseId"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CareerPhaseId");
+
+                    b.ToTable("CareerPhase");
+
+                    b.HasData(
+                        new
+                        {
+                            CareerPhaseId = 1,
+                            Name = "Starter"
+                        },
+                        new
+                        {
+                            CareerPhaseId = 2,
+                            Name = "Changer"
+                        },
+                        new
+                        {
+                            CareerPhaseId = 3,
+                            Name = "Developer"
+                        });
+                });
+
+            modelBuilder.Entity("TestingSQLRelationships.Models.ExperienceLevel", b =>
+                {
+                    b.Property<int>("ExperienceLevelId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExperienceLevelId"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ExperienceLevelId");
+
+                    b.ToTable("ExperienceLevel");
+
+                    b.HasData(
+                        new
+                        {
+                            ExperienceLevelId = 1,
+                            Name = "Beginner"
+                        },
+                        new
+                        {
+                            ExperienceLevelId = 2,
+                            Name = "Novice"
+                        },
+                        new
+                        {
+                            ExperienceLevelId = 3,
+                            Name = "Intermediate"
+                        },
+                        new
+                        {
+                            ExperienceLevelId = 4,
+                            Name = "Advanced"
+                        },
+                        new
+                        {
+                            ExperienceLevelId = 5,
+                            Name = "Expert"
+                        });
+                });
+
+            modelBuilder.Entity("TestingSQLRelationships.Models.Gender", b =>
+                {
+                    b.Property<int>("GenderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GenderId"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("GenderId");
+
+                    b.ToTable("Gender");
+
+                    b.HasData(
+                        new
+                        {
+                            GenderId = 1,
+                            Name = "Male"
+                        },
+                        new
+                        {
+                            GenderId = 2,
+                            Name = "Female"
+                        },
+                        new
+                        {
+                            GenderId = 3,
+                            Name = "Other"
+                        });
+                });
+
+            modelBuilder.Entity("TestingSQLRelationships.Models.Hobby", b =>
+                {
+                    b.Property<int>("HobbyId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HobbyId"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("HobbyId");
+
+                    b.ToTable("Hobby");
+
+                    b.HasData(
+                        new
+                        {
+                            HobbyId = 1,
+                            Name = "Acting"
+                        },
+                        new
+                        {
+                            HobbyId = 2,
+                            Name = "Adventure_Sports"
+                        },
+                        new
+                        {
+                            HobbyId = 3,
+                            Name = "Anime"
+                        },
+                        new
+                        {
+                            HobbyId = 4,
+                            Name = "Archery"
+                        },
+                        new
+                        {
+                            HobbyId = 5,
+                            Name = "Art"
+                        },
+                        new
+                        {
+                            HobbyId = 6,
+                            Name = "Astrology"
+                        },
+                        new
+                        {
+                            HobbyId = 7,
+                            Name = "Astronomy"
+                        },
+                        new
+                        {
+                            HobbyId = 8,
+                            Name = "Baseball"
+                        },
+                        new
+                        {
+                            HobbyId = 9,
+                            Name = "Basketball"
+                        },
+                        new
+                        {
+                            HobbyId = 10,
+                            Name = "Biking"
+                        },
+                        new
+                        {
+                            HobbyId = 11,
+                            Name = "Blogging"
+                        },
+                        new
+                        {
+                            HobbyId = 12,
+                            Name = "Board_Games"
+                        },
+                        new
+                        {
+                            HobbyId = 13,
+                            Name = "Card_Games"
+                        },
+                        new
+                        {
+                            HobbyId = 14,
+                            Name = "Cars"
+                        },
+                        new
+                        {
+                            HobbyId = 15,
+                            Name = "Chess"
+                        },
+                        new
+                        {
+                            HobbyId = 16,
+                            Name = "Cinema"
+                        },
+                        new
+                        {
+                            HobbyId = 17,
+                            Name = "Classical_Music"
+                        },
+                        new
+                        {
+                            HobbyId = 18,
+                            Name = "Comics"
+                        },
+                        new
+                        {
+                            HobbyId = 19,
+                            Name = "Concerts"
+                        },
+                        new
+                        {
+                            HobbyId = 20,
+                            Name = "Cooking"
+                        },
+                        new
+                        {
+                            HobbyId = 21,
+                            Name = "Cosplaying"
+                        },
+                        new
+                        {
+                            HobbyId = 22,
+                            Name = "Crafts"
+                        },
+                        new
+                        {
+                            HobbyId = 23,
+                            Name = "Creative_Writing"
+                        },
+                        new
+                        {
+                            HobbyId = 24,
+                            Name = "Cycling"
+                        },
+                        new
+                        {
+                            HobbyId = 25,
+                            Name = "Digital_Art"
+                        },
+                        new
+                        {
+                            HobbyId = 26,
+                            Name = "DIY"
+                        },
+                        new
+                        {
+                            HobbyId = 27,
+                            Name = "DJing"
+                        },
+                        new
+                        {
+                            HobbyId = 28,
+                            Name = "Drawing"
+                        },
+                        new
+                        {
+                            HobbyId = 29,
+                            Name = "Economics"
+                        },
+                        new
+                        {
+                            HobbyId = 30,
+                            Name = "Electronic_Music"
+                        },
+                        new
+                        {
+                            HobbyId = 31,
+                            Name = "Entrepreneurship"
+                        },
+                        new
+                        {
+                            HobbyId = 32,
+                            Name = "Fashion"
+                        },
+                        new
+                        {
+                            HobbyId = 33,
+                            Name = "Fiction"
+                        },
+                        new
+                        {
+                            HobbyId = 34,
+                            Name = "Filmmaking"
+                        },
+                        new
+                        {
+                            HobbyId = 35,
+                            Name = "Fitness"
+                        },
+                        new
+                        {
+                            HobbyId = 36,
+                            Name = "Folk_Music"
+                        },
+                        new
+                        {
+                            HobbyId = 37,
+                            Name = "Football"
+                        },
+                        new
+                        {
+                            HobbyId = 38,
+                            Name = "Golf"
+                        },
+                        new
+                        {
+                            HobbyId = 39,
+                            Name = "Handball"
+                        },
+                        new
+                        {
+                            HobbyId = 40,
+                            Name = "Hiking"
+                        },
+                        new
+                        {
+                            HobbyId = 41,
+                            Name = "History"
+                        },
+                        new
+                        {
+                            HobbyId = 42,
+                            Name = "Hockey"
+                        },
+                        new
+                        {
+                            HobbyId = 43,
+                            Name = "Horseback_Riding"
+                        },
+                        new
+                        {
+                            HobbyId = 44,
+                            Name = "Jazz"
+                        },
+                        new
+                        {
+                            HobbyId = 45,
+                            Name = "Learning_Languages"
+                        },
+                        new
+                        {
+                            HobbyId = 46,
+                            Name = "Mathematics"
+                        },
+                        new
+                        {
+                            HobbyId = 47,
+                            Name = "Martial_Arts"
+                        },
+                        new
+                        {
+                            HobbyId = 48,
+                            Name = "Metal"
+                        },
+                        new
+                        {
+                            HobbyId = 49,
+                            Name = "Music"
+                        },
+                        new
+                        {
+                            HobbyId = 50,
+                            Name = "Musicals"
+                        },
+                        new
+                        {
+                            HobbyId = 51,
+                            Name = "Music_Production"
+                        },
+                        new
+                        {
+                            HobbyId = 52,
+                            Name = "Non_Fiction"
+                        },
+                        new
+                        {
+                            HobbyId = 53,
+                            Name = "Opera"
+                        },
+                        new
+                        {
+                            HobbyId = 54,
+                            Name = "Painting"
+                        },
+                        new
+                        {
+                            HobbyId = 55,
+                            Name = "Pets"
+                        },
+                        new
+                        {
+                            HobbyId = 56,
+                            Name = "Philosophy"
+                        },
+                        new
+                        {
+                            HobbyId = 57,
+                            Name = "Photography"
+                        },
+                        new
+                        {
+                            HobbyId = 58,
+                            Name = "Playing_An_Instrument"
+                        },
+                        new
+                        {
+                            HobbyId = 59,
+                            Name = "Politics"
+                        },
+                        new
+                        {
+                            HobbyId = 60,
+                            Name = "Pop_Music"
+                        },
+                        new
+                        {
+                            HobbyId = 61,
+                            Name = "Reading"
+                        },
+                        new
+                        {
+                            HobbyId = 62,
+                            Name = "Restaurants"
+                        },
+                        new
+                        {
+                            HobbyId = 63,
+                            Name = "Rock_Music"
+                        },
+                        new
+                        {
+                            HobbyId = 64,
+                            Name = "Rugby"
+                        },
+                        new
+                        {
+                            HobbyId = 65,
+                            Name = "Running"
+                        },
+                        new
+                        {
+                            HobbyId = 66,
+                            Name = "Sailing"
+                        },
+                        new
+                        {
+                            HobbyId = 67,
+                            Name = "Sculpting"
+                        },
+                        new
+                        {
+                            HobbyId = 68,
+                            Name = "Sewing"
+                        },
+                        new
+                        {
+                            HobbyId = 69,
+                            Name = "Shopping"
+                        },
+                        new
+                        {
+                            HobbyId = 70,
+                            Name = "Skiing"
+                        },
+                        new
+                        {
+                            HobbyId = 71,
+                            Name = "Snow_Sports"
+                        },
+                        new
+                        {
+                            HobbyId = 72,
+                            Name = "Street_Art"
+                        },
+                        new
+                        {
+                            HobbyId = 73,
+                            Name = "Swimming"
+                        },
+                        new
+                        {
+                            HobbyId = 74,
+                            Name = "Tennis"
+                        },
+                        new
+                        {
+                            HobbyId = 75,
+                            Name = "Theatre"
+                        },
+                        new
+                        {
+                            HobbyId = 76,
+                            Name = "Travel"
+                        },
+                        new
+                        {
+                            HobbyId = 77,
+                            Name = "Video_Games"
+                        },
+                        new
+                        {
+                            HobbyId = 78,
+                            Name = "Volunteering"
+                        },
+                        new
+                        {
+                            HobbyId = 79,
+                            Name = "Walking"
+                        },
+                        new
+                        {
+                            HobbyId = 80,
+                            Name = "Water_Sports"
+                        },
+                        new
+                        {
+                            HobbyId = 81,
+                            Name = "Yoga"
+                        });
+                });
+
+            modelBuilder.Entity("TestingSQLRelationships.Models.HobbyUser", b =>
+                {
+                    b.Property<string>("SlackId")
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("SlackId");
+
+                    b.Property<int>("HobbyId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SlackId", "HobbyId");
+
+                    b.HasIndex("HobbyId");
+
+                    b.ToTable("HobbyUser");
+
+                    b.HasData(
+                        new
+                        {
+                            SlackId = "U73VQP71",
+                            HobbyId = 10
+                        },
+                        new
+                        {
+                            SlackId = "U73VQP71",
+                            HobbyId = 21
+                        },
+                        new
+                        {
+                            SlackId = "U73VQP71",
+                            HobbyId = 43
+                        });
+                });
+
+            modelBuilder.Entity("TestingSQLRelationships.Models.Likes", b =>
+                {
+                    b.Property<string>("SlackId1")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("SlackId2")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("SlackId1", "SlackId2");
+
+                    b.HasIndex("SlackId2");
+
+                    b.ToTable("Likes");
                 });
 
             modelBuilder.Entity("TestingSQLRelationships.Models.NaturalLanguage", b =>
@@ -1065,7 +1649,7 @@ namespace TestingSQLRelationships.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CareerPhase")
+                    b.Property<int>("CareerPhaseId")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -1079,10 +1663,10 @@ namespace TestingSQLRelationships.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<int>("ExperienceLevel")
+                    b.Property<int>("ExperienceLevelId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Gender")
+                    b.Property<int>("GenderId")
                         .HasColumnType("int");
 
                     b.Property<string>("Id")
@@ -1124,6 +1708,12 @@ namespace TestingSQLRelationships.Migrations
                     b.HasKey("SlackId")
                         .HasName("User_SlackId");
 
+                    b.HasIndex("CareerPhaseId");
+
+                    b.HasIndex("ExperienceLevelId");
+
+                    b.HasIndex("GenderId");
+
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -1140,15 +1730,31 @@ namespace TestingSQLRelationships.Migrations
                             SlackId = "U73VQP71",
                             AccessFailedCount = 0,
                             Bio = "Hello, my name is John. I am interested in AI.",
-                            CareerPhase = 2,
-                            ConcurrencyStamp = "faaa9ab4-ef33-4131-bac0-4bdcb66fa62e",
+                            CareerPhaseId = 2,
+                            ConcurrencyStamp = "4a1b7fd3-dc0c-4ade-8601-5c5727d58d1f",
                             EmailConfirmed = false,
-                            ExperienceLevel = 2,
-                            Gender = 0,
-                            Id = "baf5f154-f121-4b40-b987-e98dcc7c48d5",
+                            ExperienceLevelId = 2,
+                            GenderId = 1,
+                            Id = "937ce337-9ffa-41af-9cce-8775aa192c43",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a35831b5-bf16-43de-b9c4-42b0ab53f506",
+                            SecurityStamp = "0488c2a4-c8d0-4664-b49c-2e223b9fcb7b",
+                            TwoFactorEnabled = false
+                        },
+                        new
+                        {
+                            SlackId = "8UJBW6F3",
+                            AccessFailedCount = 0,
+                            Bio = "Hello, my name is Amanda. I am interested in VR.",
+                            CareerPhaseId = 1,
+                            ConcurrencyStamp = "d9ced778-3664-40ec-8be4-9d5c9c519c59",
+                            EmailConfirmed = false,
+                            ExperienceLevelId = 2,
+                            GenderId = 2,
+                            Id = "1b4fb1e1-f4f9-4215-8eb2-a5007e0e8731",
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "ad2f0f1a-54d8-4410-8a3d-ec53a81e99e9",
                             TwoFactorEnabled = false
                         });
                 });
@@ -1223,6 +1829,44 @@ namespace TestingSQLRelationships.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("TestingSQLRelationships.Models.HobbyUser", b =>
+                {
+                    b.HasOne("TestingSQLRelationships.Models.Hobby", "Hobby")
+                        .WithMany("HobbyUsers")
+                        .HasForeignKey("HobbyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TestingSQLRelationships.Models.User", "User")
+                        .WithMany("HobbyUsers")
+                        .HasForeignKey("SlackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Hobby");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("TestingSQLRelationships.Models.Likes", b =>
+                {
+                    b.HasOne("TestingSQLRelationships.Models.User", "User1")
+                        .WithMany("UsersLiked")
+                        .HasForeignKey("SlackId1")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("TestingSQLRelationships.Models.User", "User2")
+                        .WithMany("LikedBy")
+                        .HasForeignKey("SlackId2")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User1");
+
+                    b.Navigation("User2");
+                });
+
             modelBuilder.Entity("TestingSQLRelationships.Models.NaturalLanguageUser", b =>
                 {
                     b.HasOne("TestingSQLRelationships.Models.NaturalLanguage", "NaturalLanguage")
@@ -1261,9 +1905,56 @@ namespace TestingSQLRelationships.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("TestingSQLRelationships.Models.User", b =>
+                {
+                    b.HasOne("TestingSQLRelationships.Models.CareerPhase", "CareerPhase")
+                        .WithMany("Users")
+                        .HasForeignKey("CareerPhaseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TestingSQLRelationships.Models.ExperienceLevel", "ExperienceLevel")
+                        .WithMany("Users")
+                        .HasForeignKey("ExperienceLevelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TestingSQLRelationships.Models.Gender", "Gender")
+                        .WithMany("Users")
+                        .HasForeignKey("GenderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CareerPhase");
+
+                    b.Navigation("ExperienceLevel");
+
+                    b.Navigation("Gender");
+                });
+
             modelBuilder.Entity("TestingSQLRelationships.Models.CSInterest", b =>
                 {
                     b.Navigation("CSInterestUsers");
+                });
+
+            modelBuilder.Entity("TestingSQLRelationships.Models.CareerPhase", b =>
+                {
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("TestingSQLRelationships.Models.ExperienceLevel", b =>
+                {
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("TestingSQLRelationships.Models.Gender", b =>
+                {
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("TestingSQLRelationships.Models.Hobby", b =>
+                {
+                    b.Navigation("HobbyUsers");
                 });
 
             modelBuilder.Entity("TestingSQLRelationships.Models.NaturalLanguage", b =>
@@ -1280,9 +1971,15 @@ namespace TestingSQLRelationships.Migrations
                 {
                     b.Navigation("CSInterestUsers");
 
+                    b.Navigation("HobbyUsers");
+
+                    b.Navigation("LikedBy");
+
                     b.Navigation("NaturalLanguageUsers");
 
                     b.Navigation("ProgrammingLanguageUsers");
+
+                    b.Navigation("UsersLiked");
                 });
 #pragma warning restore 612, 618
         }

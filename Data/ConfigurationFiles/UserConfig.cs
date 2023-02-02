@@ -17,23 +17,34 @@ namespace TestingSQLRelationships.Data.ConfigurationFiles
             entity.HasKey(u => u.SlackId) // SlackId --> will be the User class Primary Key for linking tables in many-to-many relationships
                 .HasName("User_SlackId");
 
-            entity.Property(u => u.CareerPhase);
-            entity.Property(u => u.ExperienceLevel);
-            entity.Property(u => u.ExperienceLevel);
             entity.Property(u => u.Bio);
-            entity.Property(u => u.Gender);
+
+            // Set up many-to-one relationships
+            entity.HasOne(u => u.Gender).WithMany(g => g.Users);
+
+            entity.HasOne(u => u.ExperienceLevel).WithMany(e => e.Users);
+
+            entity.HasOne(u => u.CareerPhase).WithMany(c => c.Users);
 
             // Seed DB with a test user
             entity.HasData(
                  new User
                  {
                      SlackId = "U73VQP71",
-                     CareerPhase = EnumsForUser.CareerPhase.Developer,
-                     ExperienceLevel = EnumsForUser.ExperienceLevel.Intermediate,
                      Bio = "Hello, my name is John. I am interested in AI.",
-                     Gender = EnumsForUser.Gender.Male
+                     GenderId = 1,
+                     CareerPhaseId = 2,
+                     ExperienceLevelId = 2
+                 },
+                 new User
+                 {
+                     SlackId = "8UJBW6F3",
+                     Bio = "Hello, my name is Amanda. I am interested in VR.",
+                     GenderId = 2,
+                     CareerPhaseId = 1,
+                     ExperienceLevelId = 2
                  }
-            );
+            ); ;
         }
     }
 }
