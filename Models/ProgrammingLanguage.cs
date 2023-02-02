@@ -2,7 +2,8 @@
 {
     public class ProgrammingLanguage
     {
-        public int Id { get; set; }
-        public EnumsForUser.ProgrammingLanguageName Name { get; set; }
+        public int ProgrammingLanguageId { get; set; }
+        public string Name { get; set; }
+        public ICollection<ProgrammingLanguageUser> ProgrammingLanguageUsers { get; set; }
     }
 }

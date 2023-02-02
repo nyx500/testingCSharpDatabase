@@ -21,7 +21,10 @@ namespace TestingSQLRelationships.Models
 
         [Required(ErrorMessage = "Please enter your experience level!")]
         public EnumsForUser.ExperienceLevel ExperienceLevel { get; set; }
+
+        // ICollection variables storing lists of natural and programming languages
         public ICollection<NaturalLanguageUser> NaturalLanguageUsers { get; set; }
+        public ICollection<ProgrammingLanguageUser> ProgrammingLanguageUsers { get; set; }
 
         //[Required(ErrorMessage = "Please enable selection of Computer Science interests!")]
         //public List<CSInterest> CSInterests = new List<CSInterest>();

@@ -71,6 +71,19 @@ namespace TestingSQLRelationships.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ProgrammingLanguages",
+                columns: table => new
+                {
+                    ProgrammingLanguageId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProgrammingLanguages", x => x.ProgrammingLanguageId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -200,10 +213,34 @@ namespace TestingSQLRelationships.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "ProgrammingLanguageUser",
+                columns: table => new
+                {
+                    SlackId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProgrammingLanguageId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProgrammingLanguageUser", x => new { x.SlackId, x.ProgrammingLanguageId });
+                    table.ForeignKey(
+                        name: "FK_ProgrammingLanguageUser_AspNetUsers_SlackId",
+                        column: x => x.SlackId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "SlackId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProgrammingLanguageUser_ProgrammingLanguages_ProgrammingLanguageId",
+                        column: x => x.ProgrammingLanguageId,
+                        principalTable: "ProgrammingLanguages",
+                        principalColumn: "ProgrammingLanguageId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "SlackId", "AccessFailedCount", "Bio", "CareerPhase", "ConcurrencyStamp", "Email", "EmailConfirmed", "ExperienceLevel", "Gender", "Id", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "U73VQP71", 0, "Hello, my name is John. I am interested in AI.", 2, "13124433-01ff-4ad9-b614-9d9ba06ed686", null, false, 2, 0, "a264a41e-8873-4cf5-9dd4-7e57d4ba5ee8", false, null, null, null, null, null, false, "2c4597ce-aad5-4342-87fb-fcb5268f6d06", false, null });
+                values: new object[] { "U73VQP71", 0, "Hello, my name is John. I am interested in AI.", 2, "6cba1546-7887-4523-8e96-a92802844bbe", null, false, 2, 0, "b17b800a-07ae-4b09-9ee1-94c858912b92", false, null, null, null, null, null, false, "f3865c75-ef60-451a-9b04-7ae27de25739", false, null });
 
             migrationBuilder.InsertData(
                 table: "NaturalLanguages",
@@ -312,6 +349,64 @@ namespace TestingSQLRelationships.Migrations
                     { 100, "Zulu" }
                 });
 
+            migrationBuilder.InsertData(
+                table: "ProgrammingLanguages",
+                columns: new[] { "ProgrammingLanguageId", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Ada" },
+                    { 2, "Assembly" },
+                    { 3, "C" },
+                    { 4, "COBOL" },
+                    { 5, "CPlusPlus" },
+                    { 6, "CSharp" },
+                    { 7, "CSS" },
+                    { 8, "D" },
+                    { 9, "Dart" },
+                    { 10, "Erlang" },
+                    { 11, "Fortran" },
+                    { 12, "FSharp" },
+                    { 13, "Go" },
+                    { 14, "HTML" },
+                    { 15, "Java" },
+                    { 16, "JavaScript" },
+                    { 17, "Julia" },
+                    { 18, "Kotlin" },
+                    { 19, "Lisp" },
+                    { 20, "Lua" },
+                    { 21, "ObjectiveC" },
+                    { 22, "Pascal" },
+                    { 23, "Perl" },
+                    { 24, "PHP" },
+                    { 25, "Python" },
+                    { 26, "Ruby" },
+                    { 27, "Rust" },
+                    { 28, "SQL" },
+                    { 29, "Swift" },
+                    { 30, "Typescript" },
+                    { 31, "VisualBasic" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "NaturalLanguageUser",
+                columns: new[] { "NaturalLanguageId", "SlackId" },
+                values: new object[,]
+                {
+                    { 28, "U73VQP71" },
+                    { 45, "U73VQP71" },
+                    { 89, "U73VQP71" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ProgrammingLanguageUser",
+                columns: new[] { "ProgrammingLanguageId", "SlackId" },
+                values: new object[,]
+                {
+                    { 3, "U73VQP71" },
+                    { 5, "U73VQP71" },
+                    { 6, "U73VQP71" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -355,6 +450,11 @@ namespace TestingSQLRelationships.Migrations
                 name: "IX_NaturalLanguageUser_NaturalLanguageId",
                 table: "NaturalLanguageUser",
                 column: "NaturalLanguageId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProgrammingLanguageUser_ProgrammingLanguageId",
+                table: "ProgrammingLanguageUser",
+                column: "ProgrammingLanguageId");
         }
 
         /// <inheritdoc />
@@ -379,13 +479,19 @@ namespace TestingSQLRelationships.Migrations
                 name: "NaturalLanguageUser");
 
             migrationBuilder.DropTable(
+                name: "ProgrammingLanguageUser");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "NaturalLanguages");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "NaturalLanguages");
+                name: "ProgrammingLanguages");
         }
     }
 }

@@ -12,8 +12,8 @@ using TestingSQLRelationships.Data;
 namespace TestingSQLRelationships.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230131192540_AddManyToManyRelationship")]
-    partial class AddManyToManyRelationship
+    [Migration("20230202154652_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -714,6 +714,213 @@ namespace TestingSQLRelationships.Migrations
                         });
                 });
 
+            modelBuilder.Entity("TestingSQLRelationships.Models.ProgrammingLanguage", b =>
+                {
+                    b.Property<int>("ProgrammingLanguageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProgrammingLanguageId"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProgrammingLanguageId");
+
+                    b.ToTable("ProgrammingLanguages");
+
+                    b.HasData(
+                        new
+                        {
+                            ProgrammingLanguageId = 1,
+                            Name = "Ada"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 2,
+                            Name = "Assembly"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 3,
+                            Name = "C"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 4,
+                            Name = "COBOL"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 5,
+                            Name = "CPlusPlus"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 6,
+                            Name = "CSharp"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 7,
+                            Name = "CSS"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 8,
+                            Name = "D"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 9,
+                            Name = "Dart"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 10,
+                            Name = "Erlang"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 11,
+                            Name = "Fortran"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 12,
+                            Name = "FSharp"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 13,
+                            Name = "Go"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 14,
+                            Name = "HTML"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 15,
+                            Name = "Java"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 16,
+                            Name = "JavaScript"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 17,
+                            Name = "Julia"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 18,
+                            Name = "Kotlin"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 19,
+                            Name = "Lisp"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 20,
+                            Name = "Lua"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 21,
+                            Name = "ObjectiveC"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 22,
+                            Name = "Pascal"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 23,
+                            Name = "Perl"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 24,
+                            Name = "PHP"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 25,
+                            Name = "Python"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 26,
+                            Name = "Ruby"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 27,
+                            Name = "Rust"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 28,
+                            Name = "SQL"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 29,
+                            Name = "Swift"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 30,
+                            Name = "Typescript"
+                        },
+                        new
+                        {
+                            ProgrammingLanguageId = 31,
+                            Name = "VisualBasic"
+                        });
+                });
+
+            modelBuilder.Entity("TestingSQLRelationships.Models.ProgrammingLanguageUser", b =>
+                {
+                    b.Property<string>("SlackId")
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("SlackId");
+
+                    b.Property<int>("ProgrammingLanguageId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SlackId", "ProgrammingLanguageId");
+
+                    b.HasIndex("ProgrammingLanguageId");
+
+                    b.ToTable("ProgrammingLanguageUser");
+
+                    b.HasData(
+                        new
+                        {
+                            SlackId = "U73VQP71",
+                            ProgrammingLanguageId = 3
+                        },
+                        new
+                        {
+                            SlackId = "U73VQP71",
+                            ProgrammingLanguageId = 5
+                        },
+                        new
+                        {
+                            SlackId = "U73VQP71",
+                            ProgrammingLanguageId = 6
+                        });
+                });
+
             modelBuilder.Entity("TestingSQLRelationships.Models.User", b =>
                 {
                     b.Property<string>("SlackId")
@@ -802,14 +1009,14 @@ namespace TestingSQLRelationships.Migrations
                             AccessFailedCount = 0,
                             Bio = "Hello, my name is John. I am interested in AI.",
                             CareerPhase = 2,
-                            ConcurrencyStamp = "87925b6f-5e04-4b96-8e24-337d7e144b4f",
+                            ConcurrencyStamp = "6cba1546-7887-4523-8e96-a92802844bbe",
                             EmailConfirmed = false,
                             ExperienceLevel = 2,
                             Gender = 0,
-                            Id = "1edcab42-f59a-45ca-b72d-68b89875dd7b",
+                            Id = "b17b800a-07ae-4b09-9ee1-94c858912b92",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a04fea51-33f4-418a-9b59-f0792c3c2276",
+                            SecurityStamp = "f3865c75-ef60-451a-9b04-7ae27de25739",
                             TwoFactorEnabled = false
                         });
                 });
@@ -884,14 +1091,40 @@ namespace TestingSQLRelationships.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("TestingSQLRelationships.Models.ProgrammingLanguageUser", b =>
+                {
+                    b.HasOne("TestingSQLRelationships.Models.ProgrammingLanguage", "ProgrammingLanguage")
+                        .WithMany("ProgrammingLanguageUsers")
+                        .HasForeignKey("ProgrammingLanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TestingSQLRelationships.Models.User", "User")
+                        .WithMany("ProgrammingLanguageUsers")
+                        .HasForeignKey("SlackId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProgrammingLanguage");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("TestingSQLRelationships.Models.NaturalLanguage", b =>
                 {
                     b.Navigation("NaturalLanguageUsers");
                 });
 
+            modelBuilder.Entity("TestingSQLRelationships.Models.ProgrammingLanguage", b =>
+                {
+                    b.Navigation("ProgrammingLanguageUsers");
+                });
+
             modelBuilder.Entity("TestingSQLRelationships.Models.User", b =>
                 {
                     b.Navigation("NaturalLanguageUsers");
+
+                    b.Navigation("ProgrammingLanguageUsers");
                 });
 #pragma warning restore 612, 618
         }
