@@ -24,10 +24,12 @@ namespace TestingSQLRelationships.Models
 
         // ICollection variables storing lists of natural and programming languages
         public ICollection<NaturalLanguageUser> NaturalLanguageUsers { get; set; }
+
+        [Required(ErrorMessage = "Please enable selection of favourite programming languages!")]
         public ICollection<ProgrammingLanguageUser> ProgrammingLanguageUsers { get; set; }
 
-        //[Required(ErrorMessage = "Please enable selection of Computer Science interests!")]
-        //public List<CSInterest> CSInterests = new List<CSInterest>();
+        [Required(ErrorMessage = "Please enable selection of Computer Science interests!")]
+        public ICollection<CSInterestUser> CSInterestUsers { get; set; }
 
         //[Required(ErrorMessage = "Please enable selection of Hobbies!")]
         //public List<Hobby> Hobbies = new List<Hobby>();
