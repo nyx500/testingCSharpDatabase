@@ -2,21 +2,17 @@
 
 namespace TestingSQLRelationships.Models
 {
-    public class Likes
+    public class Rejections
     {
-        [Column("Liker User")]
+        [Column("Rejecting User")]
         public string SlackId1 { get; set; }
         public User User1 { get; set; }
 
 
-        [Column("Liked User")]
+        [Column("Rejected User")]
         public string SlackId2 { get; set; }
 
         public User User2 { get; set; }
-
-        // Set to true if the first user's like is returned
-        [Column("IsMatch")]
-        public bool IsMatch { get; set; }
 
     }
 }

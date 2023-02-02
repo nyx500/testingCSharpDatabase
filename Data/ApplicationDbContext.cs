@@ -96,7 +96,9 @@ namespace TestingSQLRelationships.Data
 
             modelBuilder.ApplyConfiguration(new LikesConfig());
 
-           
+            modelBuilder.ApplyConfiguration(new RejectionsConfig());
+
+
             // Creates the Natural Language table in DB using the enum storing all the language names
             //foreach (int i in Enum.GetValues(typeof(EnumsForUser.NaturalLanguageName)))
             //{

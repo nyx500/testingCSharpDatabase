@@ -42,6 +42,9 @@ namespace TestingSQLRelationships.Models
         public ICollection<Likes> UsersLiked { get; set; }
         public ICollection<Likes> LikedBy { get; set; }
 
+        public ICollection<Rejections> UsersRejected { get; set; }
+        public ICollection<Rejections> RejectedBy { get; set; }
+
 
         // Optional fields
         public string Bio { get; set; }
