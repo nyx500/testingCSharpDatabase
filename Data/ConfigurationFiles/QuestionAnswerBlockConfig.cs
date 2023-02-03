@@ -22,7 +22,7 @@ namespace TestingSQLRelationships.Data.ConfigurationFiles
             entity.Property(qa => qa.AnswerString);
 
             // Set up many-to-one relationships
-            entity.HasOne(u => u.User).WithMany(q => q.QuestionAnswerBlocks);
+            entity.HasOne(u => u.User).WithMany(q => q.QuestionAnswerBlocks).OnDelete(DeleteBehavior.Cascade); ;
 
             entity.HasData(
                 new QuestionAnswerBlock

@@ -17,6 +17,8 @@ namespace TestingSQLRelationships.Models
         public string SlackId { get; set; } // foreign key
         public User User { get; set; } // navigation property
 
+        [Required]
+        [StringLength(200)]
         public string QuestionString { get; set; }
         public string AnswerString { get; set; }
 

@@ -22,11 +22,11 @@ namespace TestingSQLRelationships.Data.ConfigurationFiles
             entity.Property(u => u.Bio);
 
             // Set up many-to-one relationships
-            entity.HasOne(u => u.Gender).WithMany(g => g.Users);
+            entity.HasOne(u => u.Gender).WithMany(g => g.Users).OnDelete(DeleteBehavior.Cascade);
 
-            entity.HasOne(u => u.ExperienceLevel).WithMany(e => e.Users);
+            entity.HasOne(u => u.ExperienceLevel).WithMany(e => e.Users).OnDelete(DeleteBehavior.Cascade); ;
 
-            entity.HasOne(u => u.CareerPhase).WithMany(c => c.Users);
+            entity.HasOne(u => u.CareerPhase).WithMany(c => c.Users).OnDelete(DeleteBehavior.Cascade); ;
 
             // Seeds DB with test users
             entity.HasData(

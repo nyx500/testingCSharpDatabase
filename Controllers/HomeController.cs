@@ -23,6 +23,12 @@ namespace TestingSQLRelationships.Controllers
 
         public IActionResult Index()
         {
+            //Random random = new Random();
+            //int randomQuestionId = random.Next(1, 11);
+
+            //var question = _context.Questions.Find(randomQuestionId).QuestionString;
+
+            //return Content(question);
 
             return View();
         }

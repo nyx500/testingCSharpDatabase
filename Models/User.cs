@@ -10,6 +10,7 @@ namespace TestingSQLRelationships.Models
 
         // Required fields
         [Required(ErrorMessage ="Please enter a Slack ID!")]
+        [StringLength(50)]
         [Key]
         public string SlackId { get; set; }
 
@@ -48,6 +49,7 @@ namespace TestingSQLRelationships.Models
 
 
         // Optional fields
+        [StringLength(500)]
         public string Bio { get; set; }
         public int GenderId { get; set; } // foreign key
         public Gender Gender { get; set; } // navigation property
