@@ -4,11 +4,13 @@ using Microsoft.EntityFrameworkCore;
 using TestingSQLRelationships.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Reflection.Emit;
+using System.Linq;
 
 namespace TestingSQLRelationships.Data.ConfigurationFiles
 {
     internal class UserConfig : IEntityTypeConfiguration<User>
-    {   
+    {
+
         // We must override the Configure method in the IEntityTypeConfiguration interface here
         public void Configure(EntityTypeBuilder<User> entity)
         {
@@ -26,7 +28,7 @@ namespace TestingSQLRelationships.Data.ConfigurationFiles
 
             entity.HasOne(u => u.CareerPhase).WithMany(c => c.Users);
 
-            // Seed DB with a test user
+            // Seeds DB with test users
             entity.HasData(
                  new User
                  {

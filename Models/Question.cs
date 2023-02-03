@@ -1,15 +1,12 @@
-﻿namespace TestingSQLRelationships.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TestingSQLRelationships.Models
 {
     public class Question
     {
-        public Question(int _Id, string _QText)
-        {
-            Id = _Id;
-            QText = _QText;
-        }
-
-        public int Id { get; set; }
-        public string QText { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int QuestionId { get; set; }
+        public string QuestionString { get; set; }
 
     }
 }

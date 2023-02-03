@@ -20,8 +20,17 @@ namespace TestingSQLRelationships.Data
         // public DbSet<User> Users { get; set; }
         public DbSet<NaturalLanguage> NaturalLanguages { get; set; }
         public DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
-        //public DbSet<CSInterest> CSInterests { get; set; }
-        //public DbSet<Hobby> Hobbies { get; set; }
+        public DbSet<CSInterest> CSInterests { get; set; }
+        public DbSet<Hobby> Hobbies { get; set; }
+        public DbSet<NaturalLanguageUser> NaturalLanguageUsers { get; set; }
+        public DbSet<ProgrammingLanguageUser> ProgrammingLanguageUsers { get; set; }
+        public DbSet<CSInterestUser> CSInterestUsers { get; set; }
+        public DbSet<HobbyUser> HobbyUsers { get; set; }
+        public DbSet<Likes> Likes { get; set; }
+        public DbSet<Rejections> Rejections { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<QuestionAnswerBlock> QuestionAnswerBlocks { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,30 +38,7 @@ namespace TestingSQLRelationships.Data
             base.OnModelCreating(modelBuilder);
 
             // Sets up the properties included in the table for the User (IdentityUser) class
-            //modelBuilder.Entity<User>() 
-            //    .HasKey(u => u.SlackId) // SlackId --> will be the User class Primary Key for linking tables in many-to-many relationships
-            //    .HasName("User_SlackId");
-            //modelBuilder.Entity<User>()
-            //    .Property(u => u.CareerPhase);
-            //modelBuilder.Entity<User>()
-            //    .Property(u => u.ExperienceLevel);
-            //modelBuilder.Entity<User>()
-            //    .Property(u => u.ExperienceLevel);
-            //modelBuilder.Entity<User>()
-            //    .Property(u => u.Bio);
-            //modelBuilder.Entity<User>()
-            //    .Property(u => u.Gender);
             modelBuilder.ApplyConfiguration(new UserConfig());
-
-            // Sets up the Id and Name properties for the Language tables (natural and programming languages)
-            //modelBuilder.Entity<NaturalLanguage>()
-            //    .Property(n => n.NaturalLanguageId);
-            //modelBuilder.Entity<NaturalLanguage>()
-            //    .Property(n => n.Name);
-            //modelBuilder.Entity<ProgrammingLanguage>()
-            //   .Property(n => n.ProgrammingLanguageId);
-            //modelBuilder.Entity<ProgrammingLanguage>()
-            //    .Property(n => n.Name);
 
 
             modelBuilder.ApplyConfiguration(new GenderConfig());
@@ -62,41 +48,18 @@ namespace TestingSQLRelationships.Data
             modelBuilder.ApplyConfiguration(new ProgrammingLanguageConfig());
             modelBuilder.ApplyConfiguration(new CSInterestConfig());
             modelBuilder.ApplyConfiguration(new HobbyConfig());
+            modelBuilder.ApplyConfiguration(new QuestionConfig());
+
 
 
             // Set up many-to-many relationship between natural/programming languages and Users
-            //// Natural Languages
-            //modelBuilder.Entity<NaturalLanguageUser>()
-            //    .HasKey(nu => new { nu.SlackId, nu.NaturalLanguageId });
-            //modelBuilder.Entity<NaturalLanguageUser>()
-            //    .HasOne(nu => nu.User)
-            //    .WithMany(u => u.NaturalLanguageUsers)
-            //    .HasForeignKey(nu => nu.SlackId);
-            //modelBuilder.Entity<NaturalLanguageUser>()
-            //    .HasOne(nu => nu.NaturalLanguage)
-            //    .WithMany(n => n.NaturalLanguageUsers)
-            //    .HasForeignKey(nu => nu.NaturalLanguageId);
             modelBuilder.ApplyConfiguration(new NaturalLanguageUserConfig());
-            // Programming Languages: many-to-many language/user setup
-            //modelBuilder.Entity<ProgrammingLanguageUser>()
-            //    .HasKey(pu => new { pu.SlackId, pu.ProgrammingLanguageId });
-            //modelBuilder.Entity<ProgrammingLanguageUser>()
-            //    .HasOne(pu => pu.User)
-            //    .WithMany(u => u.ProgrammingLanguageUsers)
-            //    .HasForeignKey(pu => pu.SlackId);
-            //modelBuilder.Entity<ProgrammingLanguageUser>()
-            //    .HasOne(pu => pu.ProgrammingLanguage)
-            //    .WithMany(p => p.ProgrammingLanguageUsers)
-            //    .HasForeignKey(pu => pu.ProgrammingLanguageId);
             modelBuilder.ApplyConfiguration(new ProgrammingLanguageUserConfig());
-
             modelBuilder.ApplyConfiguration(new CSInterestUserConfig());
-
             modelBuilder.ApplyConfiguration(new HobbyUserConfig());
-
             modelBuilder.ApplyConfiguration(new LikesConfig());
-
             modelBuilder.ApplyConfiguration(new RejectionsConfig());
+            modelBuilder.ApplyConfiguration(new QuestionAnswerBlockConfig());
 
 
             // Creates the Natural Language table in DB using the enum storing all the language names

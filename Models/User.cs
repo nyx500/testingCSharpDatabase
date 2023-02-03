@@ -44,6 +44,7 @@ namespace TestingSQLRelationships.Models
 
         public ICollection<Rejections> UsersRejected { get; set; }
         public ICollection<Rejections> RejectedBy { get; set; }
+        public ICollection<QuestionAnswerBlock> QuestionAnswerBlocks { get; set; }
 
 
         // Optional fields

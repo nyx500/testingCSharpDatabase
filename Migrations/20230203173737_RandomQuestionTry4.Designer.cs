@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestingSQLRelationships.Data;
 
@@ -11,9 +12,11 @@ using TestingSQLRelationships.Data;
 namespace TestingSQLRelationships.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230203173737_RandomQuestionTry4")]
+    partial class RandomQuestionTry4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1741,23 +1744,17 @@ namespace TestingSQLRelationships.Migrations
 
                     b.Property<string>("SlackId")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserSlackId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("QuestionAnswerBlockId")
-                        .HasName("QuestionAnswerBlockId");
+                    b.HasKey("QuestionAnswerBlockId");
 
-                    b.HasIndex("SlackId");
+                    b.HasIndex("UserSlackId");
 
                     b.ToTable("QuestionAnswerBlocks");
-
-                    b.HasData(
-                        new
-                        {
-                            QuestionAnswerBlockId = 1,
-                            AnswerString = "Cats, coding, food",
-                            QuestionString = "What three things do you think of the most each day?",
-                            SlackId = "U73VQP71"
-                        });
                 });
 
             modelBuilder.Entity("TestingSQLRelationships.Models.Rejections", b =>
@@ -1871,14 +1868,14 @@ namespace TestingSQLRelationships.Migrations
                             AccessFailedCount = 0,
                             Bio = "Hello, my name is John. I am interested in AI.",
                             CareerPhaseId = 2,
-                            ConcurrencyStamp = "f29e70e3-bf39-498c-a885-1d01b99212cf",
+                            ConcurrencyStamp = "fba045fb-740c-45af-a88a-2f5e7dabb35a",
                             EmailConfirmed = false,
                             ExperienceLevelId = 2,
                             GenderId = 1,
-                            Id = "4751e04b-fb02-4a5d-a117-0324bb1d5a5a",
+                            Id = "4f59c7e0-2f38-4fec-92e1-b7a304a7e2c1",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a9c5c518-d554-413f-a75b-a7caf1c9cd3e",
+                            SecurityStamp = "00dba039-c738-42fd-9519-b919e80114c3",
                             TwoFactorEnabled = false
                         },
                         new
@@ -1887,14 +1884,14 @@ namespace TestingSQLRelationships.Migrations
                             AccessFailedCount = 0,
                             Bio = "Hello, my name is Amanda. I am interested in VR.",
                             CareerPhaseId = 1,
-                            ConcurrencyStamp = "11a9e460-842a-4cca-95b6-c2c4cb5f5f93",
+                            ConcurrencyStamp = "6872e216-f490-441c-8c34-4aa14a7cc00c",
                             EmailConfirmed = false,
                             ExperienceLevelId = 2,
                             GenderId = 2,
-                            Id = "5a9d0dfb-955e-4fe3-ba58-39d19133e0b2",
+                            Id = "8b05e1c3-dd61-4908-8d76-7b012072a6dd",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "00f267ca-282d-4e6d-b663-0f942d6468a7",
+                            SecurityStamp = "5f7f39d8-fe3c-412b-8640-3d4010ee2ab6",
                             TwoFactorEnabled = false
                         });
                 });
@@ -2049,7 +2046,7 @@ namespace TestingSQLRelationships.Migrations
                 {
                     b.HasOne("TestingSQLRelationships.Models.User", "User")
                         .WithMany("QuestionAnswerBlocks")
-                        .HasForeignKey("SlackId")
+                        .HasForeignKey("UserSlackId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
