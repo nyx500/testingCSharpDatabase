@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using System.Diagnostics;
+using System.Linq;
+using TestingSQLRelationships.Data;
 
 namespace TestingSQLRelationships.Controllers
 {
@@ -10,13 +12,18 @@ namespace TestingSQLRelationships.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        // Access to the database
+        private ApplicationDbContext _context { get; set; }
+
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context) // Need this to set up access to the database
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
+
             return View();
         }
 

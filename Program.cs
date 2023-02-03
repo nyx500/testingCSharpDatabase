@@ -1,16 +1,22 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using TestingSQLRelationships.Data;
+using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore;
+using TestingSQLRelationships.Models;
+using TestingSQLRelationships.Data;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 // Add ApplicationDbContext
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContext");
 // Dependency injection for Questions DB context class
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString)); // AddDbContext creates a DbContextOptions object with settings for database server/connection string
+builder.Services.AddDbContext<ApplicationDbContext>(options => 
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("ApplicationDbContext")
+       )
+    ); // AddDbContext creates a DbContextOptions object with settings for database server/connection string
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
