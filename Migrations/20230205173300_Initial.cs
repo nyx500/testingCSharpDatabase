@@ -3,8 +3,6 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
 namespace TestingSQLRelationships.Migrations
 {
     /// <inheritdoc />
@@ -128,7 +126,7 @@ namespace TestingSQLRelationships.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Questions", x => x.QuestionId);
+                    table.PrimaryKey("QuestionId", x => x.QuestionId);
                 });
 
             migrationBuilder.CreateTable(
@@ -451,311 +449,6 @@ namespace TestingSQLRelationships.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.InsertData(
-                table: "CSInterests",
-                columns: new[] { "CSInterestId", "Name" },
-                values: new object[,]
-                {
-                    { 1, "Artificial_Intelligence" },
-                    { 2, "Cybersecurity" },
-                    { 3, "Database_Technology" },
-                    { 4, "Fintech" },
-                    { 5, "Games_Development" },
-                    { 6, "Graphics_Programming" },
-                    { 7, "Intelligent_Signal_Processing" },
-                    { 8, "Internet_of_Things" },
-                    { 9, "Machine_Learning" },
-                    { 10, "Mobile_Development" },
-                    { 11, "Neural_Networks" },
-                    { 12, "Natural_Language_Processing" },
-                    { 13, "Theoretical_Computer_Science" },
-                    { 14, "Web_Development" },
-                    { 15, "User_Experience" },
-                    { 16, "Virtual_Reality" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "CareerPhase",
-                columns: new[] { "CareerPhaseId", "Name" },
-                values: new object[,]
-                {
-                    { 1, "Starter" },
-                    { 2, "Changer" },
-                    { 3, "Developer" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "ExperienceLevel",
-                columns: new[] { "ExperienceLevelId", "Name" },
-                values: new object[,]
-                {
-                    { 1, "Beginner" },
-                    { 2, "Novice" },
-                    { 3, "Intermediate" },
-                    { 4, "Advanced" },
-                    { 5, "Expert" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Gender",
-                columns: new[] { "GenderId", "Name" },
-                values: new object[,]
-                {
-                    { 1, "Male" },
-                    { 2, "Female" },
-                    { 3, "Other" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Hobbies",
-                columns: new[] { "HobbyId", "Name" },
-                values: new object[,]
-                {
-                    { 1, "Acting" },
-                    { 2, "Adventure_Sports" },
-                    { 3, "Anime" },
-                    { 4, "Archery" },
-                    { 5, "Art" },
-                    { 6, "Astrology" },
-                    { 7, "Astronomy" },
-                    { 8, "Baseball" },
-                    { 9, "Basketball" },
-                    { 10, "Biking" },
-                    { 11, "Blogging" },
-                    { 12, "Board_Games" },
-                    { 13, "Card_Games" },
-                    { 14, "Cars" },
-                    { 15, "Chess" },
-                    { 16, "Cinema" },
-                    { 17, "Classical_Music" },
-                    { 18, "Comics" },
-                    { 19, "Concerts" },
-                    { 20, "Cooking" },
-                    { 21, "Cosplaying" },
-                    { 22, "Crafts" },
-                    { 23, "Creative_Writing" },
-                    { 24, "Cycling" },
-                    { 25, "Digital_Art" },
-                    { 26, "DIY" },
-                    { 27, "DJing" },
-                    { 28, "Drawing" },
-                    { 29, "Economics" },
-                    { 30, "Electronic_Music" },
-                    { 31, "Entrepreneurship" },
-                    { 32, "Fashion" },
-                    { 33, "Fiction" },
-                    { 34, "Filmmaking" },
-                    { 35, "Fitness" },
-                    { 36, "Folk_Music" },
-                    { 37, "Football" },
-                    { 38, "Golf" },
-                    { 39, "Handball" },
-                    { 40, "Hiking" },
-                    { 41, "History" },
-                    { 42, "Hockey" },
-                    { 43, "Horseback_Riding" },
-                    { 44, "Jazz" },
-                    { 45, "Learning_Languages" },
-                    { 46, "Mathematics" },
-                    { 47, "Martial_Arts" },
-                    { 48, "Metal" },
-                    { 49, "Music" },
-                    { 50, "Musicals" },
-                    { 51, "Music_Production" },
-                    { 52, "Non_Fiction" },
-                    { 53, "Opera" },
-                    { 54, "Painting" },
-                    { 55, "Pets" },
-                    { 56, "Philosophy" },
-                    { 57, "Photography" },
-                    { 58, "Playing_An_Instrument" },
-                    { 59, "Politics" },
-                    { 60, "Pop_Music" },
-                    { 61, "Reading" },
-                    { 62, "Restaurants" },
-                    { 63, "Rock_Music" },
-                    { 64, "Rugby" },
-                    { 65, "Running" },
-                    { 66, "Sailing" },
-                    { 67, "Sculpting" },
-                    { 68, "Sewing" },
-                    { 69, "Shopping" },
-                    { 70, "Skiing" },
-                    { 71, "Snow_Sports" },
-                    { 72, "Street_Art" },
-                    { 73, "Swimming" },
-                    { 74, "Tennis" },
-                    { 75, "Theatre" },
-                    { 76, "Travel" },
-                    { 77, "Video_Games" },
-                    { 78, "Volunteering" },
-                    { 79, "Walking" },
-                    { 80, "Water_Sports" },
-                    { 81, "Yoga" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "NaturalLanguages",
-                columns: new[] { "NaturalLanguageId", "Name" },
-                values: new object[,]
-                {
-                    { 1, "Akan" },
-                    { 2, "Amharic" },
-                    { 3, "Arabic" },
-                    { 4, "Assamese" },
-                    { 5, "Awadhi" },
-                    { 6, "Azerbaijani" },
-                    { 7, "Balochi" },
-                    { 8, "Belarusian" },
-                    { 9, "Bengali" },
-                    { 10, "Bhojpuri" },
-                    { 11, "Burmese" },
-                    { 12, "Cebuano" },
-                    { 13, "Chewa" },
-                    { 14, "Chhattisgarhi" },
-                    { 15, "Chittagonian" },
-                    { 16, "Czech" },
-                    { 17, "Deccan" },
-                    { 18, "Dhundhari" },
-                    { 19, "Dutch" },
-                    { 20, "Eastern_Min" },
-                    { 21, "English" },
-                    { 22, "French" },
-                    { 23, "Fula" },
-                    { 24, "Gan_Chinese" },
-                    { 25, "German" },
-                    { 26, "Greek" },
-                    { 27, "Gujarati" },
-                    { 28, "Haitian_Creole" },
-                    { 29, "Hakka" },
-                    { 30, "Haryanvi" },
-                    { 31, "Hausa" },
-                    { 32, "Hiligaynon" },
-                    { 33, "Hindi" },
-                    { 34, "Hmong" },
-                    { 35, "Hungarian" },
-                    { 36, "Igbo" },
-                    { 37, "Ilocano" },
-                    { 38, "Italian" },
-                    { 39, "Japanese" },
-                    { 40, "Javanese" },
-                    { 41, "Jin" },
-                    { 42, "Kannada" },
-                    { 43, "Kazakh" },
-                    { 44, "Khmer" },
-                    { 45, "Kinyarwanda" },
-                    { 46, "Kirundi" },
-                    { 47, "Konkani" },
-                    { 48, "Korean" },
-                    { 49, "Kurdish" },
-                    { 50, "Madurese" },
-                    { 51, "Magahi" },
-                    { 52, "Maithili" },
-                    { 53, "Malagasy" },
-                    { 54, "Malay_Indonesian" },
-                    { 55, "Malayalam" },
-                    { 56, "Mandarin" },
-                    { 57, "Marathi" },
-                    { 58, "Marwari" },
-                    { 59, "Mossi" },
-                    { 60, "Nepali" },
-                    { 61, "Northern_Min" },
-                    { 62, "Odia_Oriya" },
-                    { 63, "Oromo" },
-                    { 64, "Pashto" },
-                    { 65, "Persian" },
-                    { 66, "Polish" },
-                    { 67, "Portuguese" },
-                    { 68, "Punjabi" },
-                    { 69, "Quechua" },
-                    { 70, "Romanian" },
-                    { 71, "Russian" },
-                    { 72, "Saraiki" },
-                    { 73, "Serbo_Croatian" },
-                    { 74, "Shona" },
-                    { 75, "Sindhi" },
-                    { 76, "Sinhalese" },
-                    { 77, "Somali" },
-                    { 78, "Southern_Min" },
-                    { 79, "Spanish" },
-                    { 80, "Sundanese" },
-                    { 81, "Swedish" },
-                    { 82, "Sylheti" },
-                    { 83, "Tagalog" },
-                    { 84, "Tamil" },
-                    { 85, "Telugu" },
-                    { 86, "Thai" },
-                    { 87, "Turkish" },
-                    { 88, "Turkmen" },
-                    { 89, "Ukrainian" },
-                    { 90, "Urdu" },
-                    { 91, "Uyghur" },
-                    { 92, "Uzbek" },
-                    { 93, "Vietnamese" },
-                    { 94, "Wu_inc_Shanghainese" },
-                    { 95, "Xhosa" },
-                    { 96, "Xiang_Hunnanese" },
-                    { 97, "Yoruba" },
-                    { 98, "Yue_Cantonese" },
-                    { 99, "Zhuang" },
-                    { 100, "Zulu" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "ProgrammingLanguages",
-                columns: new[] { "ProgrammingLanguageId", "Name" },
-                values: new object[,]
-                {
-                    { 1, "Ada" },
-                    { 2, "Assembly" },
-                    { 3, "C" },
-                    { 4, "COBOL" },
-                    { 5, "CPlusPlus" },
-                    { 6, "CSharp" },
-                    { 7, "CSS" },
-                    { 8, "D" },
-                    { 9, "Dart" },
-                    { 10, "Erlang" },
-                    { 11, "Fortran" },
-                    { 12, "FSharp" },
-                    { 13, "Go" },
-                    { 14, "HTML" },
-                    { 15, "Java" },
-                    { 16, "JavaScript" },
-                    { 17, "Julia" },
-                    { 18, "Kotlin" },
-                    { 19, "Lisp" },
-                    { 20, "Lua" },
-                    { 21, "ObjectiveC" },
-                    { 22, "Pascal" },
-                    { 23, "Perl" },
-                    { 24, "PHP" },
-                    { 25, "Python" },
-                    { 26, "Ruby" },
-                    { 27, "Rust" },
-                    { 28, "SQL" },
-                    { 29, "Swift" },
-                    { 30, "Typescript" },
-                    { 31, "VisualBasic" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Questions",
-                columns: new[] { "QuestionId", "QuestionString" },
-                values: new object[,]
-                {
-                    { 1, "What is your dream job?" },
-                    { 2, "What is your biggest fear?" },
-                    { 3, "What did you want to be when you were small?" },
-                    { 4, "If you could only eat one meal for the rest of your life, what would it be?" },
-                    { 5, "If you were a super-hero, what powers would you have?" },
-                    { 6, "If you could go back in time to change one thing, what would it be?" },
-                    { 7, "What was the last book you read?" },
-                    { 8, "What is your favorite childhood memory?" },
-                    { 9, "Which of the five senses would you say is your strongest?" },
-                    { 10, "What three things do you think of the most each day?" }
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -804,6 +497,18 @@ namespace TestingSQLRelationships.Migrations
                 column: "GenderId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_AspNetUsers_SlackId",
+                table: "AspNetUsers",
+                column: "SlackId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUsers_UserName",
+                table: "AspNetUsers",
+                column: "UserName",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
@@ -839,6 +544,12 @@ namespace TestingSQLRelationships.Migrations
                 name: "IX_QuestionAnswerBlocks_SlackId",
                 table: "QuestionAnswerBlocks",
                 column: "SlackId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Questions_QuestionId",
+                table: "Questions",
+                column: "QuestionId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Rejections_Rejected User",
