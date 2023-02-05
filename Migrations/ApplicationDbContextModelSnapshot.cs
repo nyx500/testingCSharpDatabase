@@ -90,7 +90,7 @@ namespace TestingSQLRelationships.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -114,7 +114,7 @@ namespace TestingSQLRelationships.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -126,7 +126,7 @@ namespace TestingSQLRelationships.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("RoleId")
                         .HasColumnType("nvarchar(450)");
@@ -141,7 +141,7 @@ namespace TestingSQLRelationships.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("LoginProvider")
                         .HasMaxLength(128)
@@ -261,7 +261,7 @@ namespace TestingSQLRelationships.Migrations
             modelBuilder.Entity("TestingSQLRelationships.Models.CSInterestUser", b =>
                 {
                     b.Property<string>("SlackId")
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("SlackId");
 
                     b.Property<int>("CSInterestId")
@@ -272,23 +272,6 @@ namespace TestingSQLRelationships.Migrations
                     b.HasIndex("CSInterestId");
 
                     b.ToTable("CSInterestUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            SlackId = "U73VQP71",
-                            CSInterestId = 1
-                        },
-                        new
-                        {
-                            SlackId = "U73VQP71",
-                            CSInterestId = 2
-                        },
-                        new
-                        {
-                            SlackId = "U73VQP71",
-                            CSInterestId = 3
-                        });
                 });
 
             modelBuilder.Entity("TestingSQLRelationships.Models.CareerPhase", b =>
@@ -830,7 +813,7 @@ namespace TestingSQLRelationships.Migrations
             modelBuilder.Entity("TestingSQLRelationships.Models.HobbyUser", b =>
                 {
                     b.Property<string>("SlackId")
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("SlackId");
 
                     b.Property<int>("HobbyId")
@@ -841,33 +824,16 @@ namespace TestingSQLRelationships.Migrations
                     b.HasIndex("HobbyId");
 
                     b.ToTable("HobbyUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            SlackId = "U73VQP71",
-                            HobbyId = 10
-                        },
-                        new
-                        {
-                            SlackId = "U73VQP71",
-                            HobbyId = 21
-                        },
-                        new
-                        {
-                            SlackId = "U73VQP71",
-                            HobbyId = 43
-                        });
                 });
 
             modelBuilder.Entity("TestingSQLRelationships.Models.Likes", b =>
                 {
                     b.Property<string>("SlackId1")
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("Liker User");
 
                     b.Property<string>("SlackId2")
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("Liked User");
 
                     b.Property<bool>("IsMatch")
@@ -879,20 +845,6 @@ namespace TestingSQLRelationships.Migrations
                     b.HasIndex("SlackId2");
 
                     b.ToTable("Likes");
-
-                    b.HasData(
-                        new
-                        {
-                            SlackId1 = "U73VQP71",
-                            SlackId2 = "8UJBW6F3",
-                            IsMatch = false
-                        },
-                        new
-                        {
-                            SlackId1 = "8UJBW6F3",
-                            SlackId2 = "U73VQP71",
-                            IsMatch = false
-                        });
                 });
 
             modelBuilder.Entity("TestingSQLRelationships.Models.NaturalLanguage", b =>
@@ -1417,7 +1369,7 @@ namespace TestingSQLRelationships.Migrations
             modelBuilder.Entity("TestingSQLRelationships.Models.NaturalLanguageUser", b =>
                 {
                     b.Property<string>("SlackId")
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("SlackId");
 
                     b.Property<int>("NaturalLanguageId")
@@ -1428,23 +1380,6 @@ namespace TestingSQLRelationships.Migrations
                     b.HasIndex("NaturalLanguageId");
 
                     b.ToTable("NaturalLanguageUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            SlackId = "U73VQP71",
-                            NaturalLanguageId = 89
-                        },
-                        new
-                        {
-                            SlackId = "U73VQP71",
-                            NaturalLanguageId = 28
-                        },
-                        new
-                        {
-                            SlackId = "U73VQP71",
-                            NaturalLanguageId = 45
-                        });
                 });
 
             modelBuilder.Entity("TestingSQLRelationships.Models.ProgrammingLanguage", b =>
@@ -1624,7 +1559,7 @@ namespace TestingSQLRelationships.Migrations
             modelBuilder.Entity("TestingSQLRelationships.Models.ProgrammingLanguageUser", b =>
                 {
                     b.Property<string>("SlackId")
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("SlackId");
 
                     b.Property<int>("ProgrammingLanguageId")
@@ -1635,23 +1570,6 @@ namespace TestingSQLRelationships.Migrations
                     b.HasIndex("ProgrammingLanguageId");
 
                     b.ToTable("ProgrammingLanguageUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            SlackId = "U73VQP71",
-                            ProgrammingLanguageId = 3
-                        },
-                        new
-                        {
-                            SlackId = "U73VQP71",
-                            ProgrammingLanguageId = 5
-                        },
-                        new
-                        {
-                            SlackId = "U73VQP71",
-                            ProgrammingLanguageId = 6
-                        });
                 });
 
             modelBuilder.Entity("TestingSQLRelationships.Models.Question", b =>
@@ -1666,7 +1584,11 @@ namespace TestingSQLRelationships.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("QuestionId");
+                    b.HasKey("QuestionId")
+                        .HasName("QuestionId");
+
+                    b.HasIndex("QuestionId")
+                        .IsUnique();
 
                     b.ToTable("Questions");
 
@@ -1737,11 +1659,12 @@ namespace TestingSQLRelationships.Migrations
 
                     b.Property<string>("QuestionString")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("SlackId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("QuestionAnswerBlockId")
                         .HasName("QuestionAnswerBlockId");
@@ -1749,25 +1672,16 @@ namespace TestingSQLRelationships.Migrations
                     b.HasIndex("SlackId");
 
                     b.ToTable("QuestionAnswerBlocks");
-
-                    b.HasData(
-                        new
-                        {
-                            QuestionAnswerBlockId = 1,
-                            AnswerString = "Cats, coding, food",
-                            QuestionString = "What three things do you think of the most each day?",
-                            SlackId = "U73VQP71"
-                        });
                 });
 
             modelBuilder.Entity("TestingSQLRelationships.Models.Rejections", b =>
                 {
                     b.Property<string>("SlackId1")
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("Rejecting User");
 
                     b.Property<string>("SlackId2")
-                        .HasColumnType("nvarchar(450)")
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("Rejected User");
 
                     b.HasKey("SlackId1", "SlackId2");
@@ -1780,14 +1694,16 @@ namespace TestingSQLRelationships.Migrations
             modelBuilder.Entity("TestingSQLRelationships.Models.User", b =>
                 {
                     b.Property<string>("SlackId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
                     b.Property<string>("Bio")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("CareerPhaseId")
                         .HasColumnType("int");
@@ -1842,6 +1758,7 @@ namespace TestingSQLRelationships.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
+                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -1862,41 +1779,13 @@ namespace TestingSQLRelationships.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.ToTable("AspNetUsers", (string)null);
+                    b.HasIndex("SlackId")
+                        .IsUnique();
 
-                    b.HasData(
-                        new
-                        {
-                            SlackId = "U73VQP71",
-                            AccessFailedCount = 0,
-                            Bio = "Hello, my name is John. I am interested in AI.",
-                            CareerPhaseId = 2,
-                            ConcurrencyStamp = "f29e70e3-bf39-498c-a885-1d01b99212cf",
-                            EmailConfirmed = false,
-                            ExperienceLevelId = 2,
-                            GenderId = 1,
-                            Id = "4751e04b-fb02-4a5d-a117-0324bb1d5a5a",
-                            LockoutEnabled = false,
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "a9c5c518-d554-413f-a75b-a7caf1c9cd3e",
-                            TwoFactorEnabled = false
-                        },
-                        new
-                        {
-                            SlackId = "8UJBW6F3",
-                            AccessFailedCount = 0,
-                            Bio = "Hello, my name is Amanda. I am interested in VR.",
-                            CareerPhaseId = 1,
-                            ConcurrencyStamp = "11a9e460-842a-4cca-95b6-c2c4cb5f5f93",
-                            EmailConfirmed = false,
-                            ExperienceLevelId = 2,
-                            GenderId = 2,
-                            Id = "5a9d0dfb-955e-4fe3-ba58-39d19133e0b2",
-                            LockoutEnabled = false,
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "00f267ca-282d-4e6d-b663-0f942d6468a7",
-                            TwoFactorEnabled = false
-                        });
+                    b.HasIndex("UserName")
+                        .IsUnique();
+
+                    b.ToTable("AspNetUsers", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -19,6 +19,16 @@ namespace TestingSQLRelationships.Data.ConfigurationFiles
             entity.HasKey(u => u.SlackId) // SlackId --> will be the User class Primary Key for linking tables in many-to-many relationships
                 .HasName("User_SlackId");
 
+            // Make SlackId unique
+            entity.HasIndex(u => u.SlackId)
+                .IsUnique();
+
+            entity.Property(u => u.UserName);
+
+            // Make UserName unique
+            entity.HasIndex(u => u.UserName)
+                .IsUnique();
+
             entity.Property(u => u.Bio);
 
             // Set up many-to-one relationships
@@ -29,24 +39,24 @@ namespace TestingSQLRelationships.Data.ConfigurationFiles
             entity.HasOne(u => u.CareerPhase).WithMany(c => c.Users).OnDelete(DeleteBehavior.Cascade); ;
 
             // Seeds DB with test users
-            entity.HasData(
-                 new User
-                 {
-                     SlackId = "U73VQP71",
-                     Bio = "Hello, my name is John. I am interested in AI.",
-                     GenderId = 1,
-                     CareerPhaseId = 2,
-                     ExperienceLevelId = 2
-                 },
-                 new User
-                 {
-                     SlackId = "8UJBW6F3",
-                     Bio = "Hello, my name is Amanda. I am interested in VR.",
-                     GenderId = 2,
-                     CareerPhaseId = 1,
-                     ExperienceLevelId = 2
-                 }
-            ); ;
+            //entity.HasData(
+            //     new User
+            //     {
+            //         SlackId = "U73VQP71",
+            //         Bio = "Hello, my name is John. I am interested in AI.",
+            //         GenderId = 1,
+            //         CareerPhaseId = 2,
+            //         ExperienceLevelId = 2
+            //     },
+            //     new User
+            //     {
+            //         SlackId = "8UJBW6F3",
+            //         Bio = "Hello, my name is Amanda. I am interested in VR.",
+            //         GenderId = 2,
+            //         CareerPhaseId = 1,
+            //         ExperienceLevelId = 2
+            //     }
+            //);
         }
     }
 }

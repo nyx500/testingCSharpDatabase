@@ -1,11 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.InMemory;
 using Microsoft.AspNetCore.Identity;
 using TestingSQLRelationships.Data;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore;
 using TestingSQLRelationships.Models;
 using TestingSQLRelationships.Data;
-
+using NuGet.Protocol.Core.Types;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,8 +19,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
        )
     ); // AddDbContext creates a DbContextOptions object with settings for database server/connection string
 
+
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 

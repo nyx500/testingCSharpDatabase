@@ -26,9 +26,9 @@ namespace TestingSQLRelationships.Data.ConfigurationFiles
                 .HasForeignKey(x => x.SlackId2);
 
             // Means --> User with SlackId "U73VQP71" likes the user with the Slack Id "8UJBW6F3"
-            entity.HasData(new Likes { SlackId1 = "U73VQP71", SlackId2 = "8UJBW6F3" });
-            // Otherway round
-            entity.HasData(new Likes { SlackId1 = "8UJBW6F3", SlackId2 = "U73VQP71" });
+            //entity.HasData(new Likes { SlackId1 = "U73VQP71", SlackId2 = "8UJBW6F3" });
+            //// Otherway round
+            //entity.HasData(new Likes { SlackId1 = "8UJBW6F3", SlackId2 = "U73VQP71" });
 
         }
     }

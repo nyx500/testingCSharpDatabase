@@ -23,15 +23,15 @@ namespace TestingSQLRelationships.Data.ConfigurationFiles
                 .HasForeignKey(pu => pu.ProgrammingLanguageId);
 
             // Sets up the test many-to-many relationship bectween the test user and their favourite programming languages
-            entity.HasData(
-                    new ProgrammingLanguageUser { SlackId = "U73VQP71", ProgrammingLanguageId = 3 }
-                     );
-               entity.HasData(
-                    new ProgrammingLanguageUser { SlackId = "U73VQP71", ProgrammingLanguageId = 5 }
-                    );
-               entity.HasData(
-                    new ProgrammingLanguageUser { SlackId = "U73VQP71", ProgrammingLanguageId = 6 }
-                    );
+            //entity.HasData(
+            //        new ProgrammingLanguageUser { SlackId = "U73VQP71", ProgrammingLanguageId = 3 }
+            //         );
+            //   entity.HasData(
+            //        new ProgrammingLanguageUser { SlackId = "U73VQP71", ProgrammingLanguageId = 5 }
+            //        );
+            //   entity.HasData(
+            //        new ProgrammingLanguageUser { SlackId = "U73VQP71", ProgrammingLanguageId = 6 }
+            //        );
         }
     }
 }

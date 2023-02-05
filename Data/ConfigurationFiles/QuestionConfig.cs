@@ -12,8 +12,10 @@ namespace TestingSQLRelationships.Data.ConfigurationFiles
     {
         // We must override the Configure method in the IEntityTypeConfiguration interface here
         public void Configure(EntityTypeBuilder<Question> entity)
-        {   
-            entity.Property(n => n.QuestionId);
+        {
+            entity.HasKey(q => q.QuestionId).HasName("QuestionId");
+            entity.HasIndex(q => q.QuestionId).IsUnique();
+
             entity.Property(n => n.QuestionString);
 
             entity.HasData(

@@ -24,15 +24,15 @@ namespace TestingSQLRelationships.Data.ConfigurationFiles
             // Set up many-to-one relationships
             entity.HasOne(u => u.User).WithMany(q => q.QuestionAnswerBlocks).OnDelete(DeleteBehavior.Cascade); ;
 
-            entity.HasData(
-                new QuestionAnswerBlock
-                {
-                    QuestionAnswerBlockId = 1,
-                    SlackId = "U73VQP71",
-                    QuestionString = "What three things do you think of the most each day?",
-                    AnswerString = "Cats, coding, food"
-                }
-            ); ;
+            //entity.HasData(
+            //    new QuestionAnswerBlock
+            //    {
+            //        QuestionAnswerBlockId = 1,
+            //        SlackId = "U73VQP71",
+            //        QuestionString = "What three things do you think of the most each day?",
+            //        AnswerString = "Cats, coding, food"
+            //    }
+            //);
 
         }
     }

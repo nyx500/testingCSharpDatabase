@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace TestingSQLRelationships.Models
 {
+
     public class User : IdentityUser
     {
         // Inherits IdentityUser properties
@@ -13,6 +15,10 @@ namespace TestingSQLRelationships.Models
         [StringLength(50)]
         [Key]
         public string SlackId { get; set; }
+
+        [Required(ErrorMessage ="Please enter a Username!")]
+        [StringLength(70)]
+        public string UserName { get; set; }
 
         //public string UserId { get; set; }
 

@@ -25,15 +25,15 @@ namespace TestingSQLRelationships.Data.ConfigurationFiles
 
 
             // Sets up the test many-to-many relationship bectween the test user and their spoken languages
-            entity.HasData(
-                    new CSInterestUser { SlackId = "U73VQP71", CSInterestId = 1 }
-                );
-            entity.HasData(
-                    new CSInterestUser { SlackId = "U73VQP71", CSInterestId = 2 }
-                );
-            entity.HasData(
-                    new CSInterestUser { SlackId = "U73VQP71", CSInterestId = 3 }
-                );
+            //entity.HasData(
+            //        new CSInterestUser { SlackId = "U73VQP71", CSInterestId = 1 }
+            //    );
+            //entity.HasData(
+            //        new CSInterestUser { SlackId = "U73VQP71", CSInterestId = 2 }
+            //    );
+            //entity.HasData(
+            //        new CSInterestUser { SlackId = "U73VQP71", CSInterestId = 3 }
+            //    );
         }
     }
 }
